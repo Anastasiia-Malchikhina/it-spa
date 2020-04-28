@@ -1,7 +1,7 @@
 # to start
-git clone 
-npm install
-npm run start:app and npm run start:db
+- git clone 
+- npm install
+- npm run start:app and npm run start:db
 
 # IT SPA
 
