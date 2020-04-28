@@ -1,3 +1,8 @@
+# to start
+git clone 
+npm install
+npm run start:app and npm run start:db
+
 # IT SPA
 
 Projekt polega na napisaniu aplikacji Single Page Application dla ośrodka SPA dedykowanego programistom.
