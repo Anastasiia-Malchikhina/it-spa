@@ -37,7 +37,7 @@ export const booking = () => {
           });
         });
       }
-      else {
+      else if (prop.includes("id-room")){
         var temp = new Array();
         var temp = cookiesRooms[prop].split(' ');
 
@@ -65,11 +65,12 @@ export const booking = () => {
             location.reload();
           });
         });
+        const bookingRoomDate = $(`<div class="booking-date">
+        <span class=" badge badge-secondary booking-start">${temp[1]} </span>
+        <span class="badge  badge-secondary booking-end">${temp[2]}</span>
+        </div>`)
       }
-      const bookingRoomDate = $(`<div class="booking-date">
-      <span class=" badge badge-secondary booking-start">${temp[1]} </span>
-      <span class="badge  badge-secondary booking-end">${temp[2]}</span>
-      </div>`)
+
 
     }
 

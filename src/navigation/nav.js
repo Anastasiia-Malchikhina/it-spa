@@ -13,7 +13,7 @@ export const nav = () => {
   const navbar = $(`
   <nav class="navbar navbar-expand-lg  navbar-dark">
   <div class="container">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="#">IT SPA - Anastasiia</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -46,11 +46,12 @@ export const nav = () => {
   </div>`);
 
   const cookiesRooms = Cookies.get('');
-
+  console.log(cookiesRooms);
   for (var prop in cookiesRooms) {
-
+    // console.log(prop);
+    console.log(prop.includes("id"));
     if (prop.includes("treatment")){
-      
+     
       var temp = new Array();
       var temp = cookiesRooms[prop].split(' ');
 
@@ -74,10 +75,10 @@ export const nav = () => {
       });
       }
 
-    else {
+      else if (prop.includes("id-room")){
+     
       var temp = new Array();
       var temp = cookiesRooms[prop].split(' ');
-  
       roomsService.getRoom(temp[0]).then(function (room) {
 
         const roomInCart = $('<div class="cart__room"></div>');
@@ -106,13 +107,12 @@ export const nav = () => {
           location.reload();
         });
       })
-    }
-  
-
-    const bookingDate = $(`<div class="booking-date">
+      const bookingDate = $(`<div class="booking-date">
       <span class="booking-start">${temp[1]}</span>
       <span class="booking-end">${temp[2]}</span>
     </div>`)
+    }
+  
 
   }
   
